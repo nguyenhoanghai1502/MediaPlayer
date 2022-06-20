@@ -59,7 +59,7 @@
             android:id="@+id/imageViewTransparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/transparent_bg"
+            android:layout_alignParentBottom="true"
             />
     </RelativeLayout>
 
@@ -122,9 +122,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/green"
             android:clickable="true"
-
+            android:outlineSpotShadowColor="@color/transparent"
+            android:outlineAmbientShadowColor="@color/transparent"
             android:focusable="true"
             android:src="@drawable/ic_baseline_play_arrow_24" />
 
@@ -137,15 +138,16 @@
             android:layout_toEndOf="@+id/id_play_pause"
 
             android:src="@drawable/ic_baseline_skip_next_24" />
+
         <ImageView
+            android:id="@+id/id_repeat"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:id="@+id/id_repeat"
-            android:src="@drawable/ic_baseline_repeat_24"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/id_play_pause"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="32dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:layout_toStartOf="@+id/id_play_pause"
+            android:src="@drawable/ic_baseline_repeat_24" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -18,7 +18,7 @@ import com.example.mediplayer.adapter.MusicAdapter;
 
 public class SongsFragment extends Fragment {
     RecyclerView recyclerView;
-    MusicAdapter musicAdapter;
+    public static MusicAdapter musicAdapter;
 
     public SongsFragment() {
         // Required empty public constructor

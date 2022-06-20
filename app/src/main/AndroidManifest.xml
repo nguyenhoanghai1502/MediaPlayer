@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mediplayer">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -11,10 +12,14 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".ApplicationClass"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MediPlayer"
         tools:targetApi="31">
+        <activity
+            android:name=".AlbumDetails"
+            android:exported="false" />
         <activity
             android:name=".PalyerActivity"
             android:exported="false" />
@@ -27,6 +32,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".MusicService" android:enabled="true"/>
+        <receiver android:name=".NotificationReceiver" android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="actionprevious"/>
+                <action android:name="actionnext"/>
+                <action android:name="actionplay"/>
+
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
